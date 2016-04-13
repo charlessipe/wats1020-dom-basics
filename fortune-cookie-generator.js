@@ -67,7 +67,7 @@ var generateFortuneCookie = function() {
 
     // TODO: Grab the paragraph with the ID
     // `fortune-cookie-text` to be able to insert text into that element.
-    var fortuneCookieText = document.getElementById("fortune-cookie-text");
+    var fortuneCookieText = document.getElementById("fortune-cookie-text"); // select the fortune cookie text element
     
   
     // TODO: Update the Previous Fortunes list with the current `innerHTML`
@@ -79,17 +79,15 @@ var generateFortuneCookie = function() {
         //    `appendChild()` to append the new `li` element you created above.
         // 4. You should see the previous fortune cookie saying show up in the list.
     
-    var randomFortune = fortunesList[Math.floor(Math.random() * fortunesList.length)];
-    //myArray[Math.floor(Math.random() * myArray.length)];
-    //Math.floor((Math.random() * 100) + 1);
+    var randomFortune = fortunesList[(Math.floor(Math.random() * fortunesList.length) + 1)]; // get random fortune from array
   
-    fortuneCookieText.innerHTML = randomFortune;
+    fortuneCookieText.innerHTML = randomFortune; // set fortune cookie text to random fortune
   
-    var fortuneLiElement = document.createElement("li");
-    fortuneLiElement.innerHTML = fortuneCookieText.innerHTML;
+    var fortuneLiElement = document.createElement("li");  // create li
+    fortuneLiElement.innerHTML = fortuneCookieText.innerHTML; // set new li text equal to fortune cookie text
   
-    var previousFortunesContainer = document.getElementById("previous-fortunes-container");
-    previousFortunesContainer.appendChild(fortuneLiElement);
+    var previousFortunesContainer = document.getElementById("previous-fortunes-container"); // select previous fortunes container
+    previousFortunesContainer.appendChild(fortuneLiElement); // append fortune cookie text to fortunes container 
   
     // TODO: Select a new (random) fortune cookie saying from the data stored in the
     // `fortunesList` variable. (HINT: You will use `Math.floor()` and
@@ -98,5 +96,4 @@ var generateFortuneCookie = function() {
     
   
 }
-generateFortuneCookie();
 
